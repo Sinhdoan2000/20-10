@@ -1,159 +1,239 @@
 <html lang="vi"><head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>20/10 — Gửi đến em yêu 💖</title>
-  <style>
-    :root{
-      --bg1:#ffe0e9;
-      --bg2:#ffc2d4;
-      --accent:#ff6b81;
-      --accent-2:#ff9f68;
-      --text:#2b2b2b;
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>20/10 — Gửi đến em yêu 💖</title>
+    <style>
+      :root{
+        --bg1:#ffe0e9;
+        --bg2:#ffc2d4;
+        --accent:#ff6b81;
+        --accent-2:#ff9f68;
+        --text:#2b2b2b;
+      }
+      *{box-sizing:border-box;margin:0;padding:0}
+      html,body{height:100%;font-family:'Poppins', ui-sans-serif, system-ui;}
+      body{
+        background: linear-gradient(120deg,var(--bg1),var(--bg2));
+        color:var(--text);
+        overflow:hidden;
+        display:flex;align-items:center;justify-content:center;padding:3rem;
+      }
+  
+      .card{
+        width:960px;max-width:95vw;background:rgba(255,255,255,0.8);
+        border-radius:24px;padding:36px;box-shadow:0 10px 40px rgba(15,15,15,0.1);backdrop-filter: blur(6px);
+        position:relative;overflow:hidden;text-align:left;
+      }
+  
+      header{display:flex;gap:20px;align-items:center;justify-content:flex-start}
+      .badge{width:86px;height:86px;border-radius:50%;background:conic-gradient(from 180deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(255,107,129,0.2),inset 0 -6px 18px rgba(255,255,255,0.25);transform:rotate(-8deg)}
+      h1{font-size:42px;margin:0;letter-spacing:-0.02em;color:#ff4f6d;}
+      p.lead{margin:6px 0 0 0;color:#444;font-size:18px;}
+  
+      .card-inner{background:rgba(255,255,255,0.6);border-radius:16px;padding:20px;margin-top:24px;font-size:18px;line-height:1.6;color:#333;}
+  
+      .blossom{position:absolute;width:18px;height:18px;pointer-events:none;transform-origin:center;}
+  
+      @media(max-width:480px){
+        body{padding:1.5rem;}
+        .card{width:90%;padding:18px;text-align:center;}
+        header{flex-direction:column;gap:10px;}
+        .badge{width:60px;height:60px;transform:none;}
+        h1{font-size:26px;}
+        p.lead{font-size:15px;}
+        .card-inner{font-size:15px;}
+      }
+      .music-player {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        background: rgba(255,255,255,0.6);
+        padding: 15px;
+        border-radius: 50px;
+        margin: 0 auto;
+        justify-content: center;
+        margin-top: 20px;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%;font-family:'Poppins', ui-sans-serif, system-ui;}
-    body{
-      background: linear-gradient(120deg,var(--bg1),var(--bg2));
-      color:var(--text);
-      overflow:hidden;
-      display:flex;align-items:center;justify-content:center;padding:3rem;
-    }
 
-    .card{
-      width:960px;max-width:95vw;background:rgba(255,255,255,0.8);
-      border-radius:24px;padding:36px;box-shadow:0 10px 40px rgba(15,15,15,0.1);backdrop-filter: blur(6px);
-      position:relative;overflow:hidden;text-align:left;
-    }
+.disc {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  animation: spin 8s linear infinite;
+  animation-play-state: paused;
+}
 
-    header{display:flex;gap:20px;align-items:center;justify-content:flex-start}
-    .badge{width:86px;height:86px;border-radius:50%;background:conic-gradient(from 180deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(255,107,129,0.2),inset 0 -6px 18px rgba(255,255,255,0.25);transform:rotate(-8deg)}
-    h1{font-size:42px;margin:0;letter-spacing:-0.02em;color:#ff4f6d;}
-    p.lead{margin:6px 0 0 0;color:#444;font-size:18px;}
+.disc img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .card-inner{background:rgba(255,255,255,0.6);border-radius:16px;padding:20px;margin-top:24px;font-size:18px;line-height:1.6;color:#333;}
+.play-btn {
+  background: #ff4081;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-    .blossom{position:absolute;width:18px;height:18px;pointer-events:none;transform-origin:center;}
+.play-btn:hover {
+  background: #f50057;
+}
 
-    @media(max-width:480px){
-      body{padding:1.5rem;}
-      .card{width:90%;padding:18px;text-align:center;}
-      header{flex-direction:column;gap:10px;}
-      .badge{width:60px;height:60px;transform:none;}
-      h1{font-size:26px;}
-      p.lead{font-size:15px;}
-      .card-inner{font-size:15px;}
-    }
-  </style>
-</head>
-<body>
-  <div class="card" id="card">
-    <header>
-      <div class="badge">💞</div>
-      <div>
-        <h1>Gửi tặng em yêu — Ngày 20/10 💐</h1>
-        <p class="lead">Em là món quà tuyệt vời nhất mà anh có. Cảm ơn em vì đã đến bên anh và khiến thế giới này đẹp hơn 💖</p>
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+    </style>
+  <body>
+    <div class="card" id="card">
+      <header>
+        <div class="badge">💞</div>
+        <div>
+          <h1>Gửi tặng em yêu — Ngày 20/10 💐</h1>
+          <p class="lead">Em là món quà tuyệt vời nhất mà anh có. Cảm ơn em vì đã đến bên anh và khiến thế giới này đẹp hơn 💖</p>
+        </div>
+      </header>
+  
+      <div class="card-inner">
+        <p>Ngày 20/10, anh không cần gì hơn ngoài việc được thấy nụ cười của em. Nụ cười ấy khiến mọi thứ xung quanh đều trở nên ấm áp hơn ☀️</p>
+        <p>Chúc em luôn vui vẻ, hạnh phúc và được yêu thương mỗi ngày — không chỉ hôm nay mà là mãi mãi 💌</p>
+        <p>Anh thương em nhiều lắm ❤️</p>
       </div>
-    </header>
 
-    <div class="card-inner">
-      <p>Ngày 20/10, anh không cần gì hơn ngoài việc được thấy nụ cười của em. Nụ cười ấy khiến mọi thứ xung quanh đều trở nên ấm áp hơn ☀️</p>
-      <p>Chúc em luôn vui vẻ, hạnh phúc và được yêu thương mỗi ngày — không chỉ hôm nay mà là mãi mãi 💌</p>
-      <p>Anh thương em nhiều lắm ❤️</p>
+      <div class="music-player" style="text-align: center; margin:0 auto;">
+        <div class="disc" id="disc">
+          <img src="./assets/images/banner.jpg" alt="Album cover">
+        </div>
+        <button id="toggleMusic" class="play-btn">🌸 Bật nhạc</button>
+      
+        <audio id="bgMusic" loop>
+          <source src="./assets/musics/Nơi Này Có Anh.mp3" type="audio/mpeg">
+        </audio>
+      </div>
     </div>
-  </div>
-
-  <iframe
-  id="hiddenVideo"
-  width="1"
-  height="1"
-  style="opacity:0; position:absolute; left:-9999px;"
-  src="https://www.youtube.com/embed/FN7ALfpGxiI?si=pwwfhuCesnBwADn0&start=37&autoplay=1&mute=1"
-  frameborder="0"
-  allow="autoplay; encrypted-media"
-  allowfullscreen
-></iframe>
-
-  <script>
-    function rand(min,max){return Math.random()*(max-min)+min}
-
-    function makeBlossom(){
-      const el=document.createElement('div');
-      el.className='blossom';
-      const size=rand(16,30);
-      el.style.left=rand(0,window.innerWidth)+'px';
-      el.style.top='-30px';
-      el.textContent=Math.random()>0.5?'🌹':'🌸';
-      el.style.fontSize=size+'px';
-      document.body.appendChild(el);
-      const duration=rand(7000,10000);
-      const ty=window.innerHeight+50;
-      const tx=rand(-100,100);
-      const rotate=rand(-720,720);
-      el.animate([
-        {transform:`translate(0,0) rotate(0deg)`,opacity:1},
-        {transform:`translate(${tx}px,${ty}px) rotate(${rotate}deg)`,opacity:0}
-      ],{duration:duration,easing:'ease-in-out'});
-      setTimeout(()=>el.remove(),duration);
+    
+    <style>
+    .music-btn {
+      background: #ff4081;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
     }
+    </style>
+    
+    <script>
+        const btn = document.getElementById('toggleMusic');
+        const music = document.getElementById('bgMusic');
+        const disc = document.getElementById('disc');
+        
+        let isPlaying = false;
+        btn.addEventListener('click', () => {
+          if (!isPlaying) {
+            music.play();
+            disc.style.animationPlayState = 'running';
+            btn.textContent = '⏸️ Đang phát';
+            isPlaying = true;
+          } else {
+            music.pause();
+            disc.style.animationPlayState = 'paused';
+            btn.textContent = '▶ Tiếp tục';
+            isPlaying = false;
+          }
+        });
+        </script>
 
-    function makeHeart(){
-      const el=document.createElement('div');
-      el.className='blossom';
-      const size=rand(20,34);
-      el.style.left=rand(0,window.innerWidth)+'px';
-      el.style.top='-30px';
-      el.textContent='💖';
-      el.style.fontSize=size+'px';
-      document.body.appendChild(el);
-      const duration=rand(8000,11000);
-      const ty=window.innerHeight+50;
-      const tx=rand(-80,80);
-      const rotate=rand(-540,540);
-      el.animate([
-        {transform:`translate(0,0) rotate(0deg)`,opacity:1},
-        {transform:`translate(${tx}px,${ty}px) rotate(${rotate}deg)`,opacity:0}
-      ],{duration:duration,easing:'ease-in-out'});
-      setTimeout(()=>el.remove(),duration);
-    }
-
-    setInterval(()=>{for(let i=0;i<5;i++) makeBlossom();},400);
-    setInterval(()=>{for(let i=0;i<3;i++) makeHeart();},800);
-
-    document.addEventListener('click', e => {
-      for(let i=0;i<10;i++){
+    <script>
+      function rand(min,max){return Math.random()*(max-min)+min}
+  
+      function makeBlossom(){
         const el=document.createElement('div');
         el.className='blossom';
+        const size=rand(16,30);
+        el.style.left=rand(0,window.innerWidth)+'px';
+        el.style.top='-30px';
         el.textContent=Math.random()>0.5?'🌹':'🌸';
-        el.style.left=e.clientX+'px';
-        el.style.top=e.clientY+'px';
-        el.style.fontSize=rand(14,28)+'px';
+        el.style.fontSize=size+'px';
         document.body.appendChild(el);
-        const duration=rand(2000,4000);
-        const tx=rand(-150,150);const ty=rand(200,400);const rotate=rand(-360,360);
+        const duration=rand(7000,10000);
+        const ty=window.innerHeight+50;
+        const tx=rand(-100,100);
+        const rotate=rand(-720,720);
         el.animate([
           {transform:`translate(0,0) rotate(0deg)`,opacity:1},
           {transform:`translate(${tx}px,${ty}px) rotate(${rotate}deg)`,opacity:0}
-        ],{duration:duration,easing:'ease-out'});
-        setTimeout(()=>el.remove(),duration);
-      }
-      for(let i=0;i<6;i++){
-        const el=document.createElement('div');
-        el.className='blossom';
-        el.textContent='💖';
-        el.style.left=e.clientX+'px';
-        el.style.top=e.clientY+'px';
-        el.style.fontSize=rand(18,32)+'px';
-        document.body.appendChild(el);
-        const duration=rand(2500,4000);
-        const tx=rand(-100,100);const ty=rand(250,450);const rotate=rand(-270,270);
-        el.animate([
-          {transform:`translate(0,0) scale(1) rotate(0deg)`,opacity:1},
-          {transform:`translate(${tx}px,${ty}px) scale(1.5) rotate(${rotate}deg)`,opacity:0}
         ],{duration:duration,easing:'ease-in-out'});
         setTimeout(()=>el.remove(),duration);
       }
-    });
-  </script>
-
-
-<div class="blossom" style="left: 1285.55px; top: -30px; font-size: 22.4655px;">🌹</div><div class="blossom" style="left: 193.992px; top: -30px; font-size: 24.0431px;">🌹</div><div class="blossom" style="left: 1264.15px; top: -30px; font-size: 18.5163px;">🌹</div><div class="blossom" style="left: 167.974px; top: -30px; font-size: 25.7599px;">🌸</div><div class="blossom" style="left: 215.164px; top: -30px; font-size: 22.5155px;">💖</div><div class="blossom" style="left: 1294.86px; top: -30px; font-size: 26.5091px;">💖</div><div class="blossom" style="left: 1182.22px; top: -30px; font-size: 28.8898px;">🌹</div><div class="blossom" style="left: 375.32px; top: -30px; font-size: 21.0276px;">🌸</div><div class="blossom" style="left: 588.71px; top: -30px; font-size: 25.1054px;">🌹</div><div class="blossom" style="left: 1122.84px; top: -30px; font-size: 19.3398px;">🌸</div><div class="blossom" style="left: 262.657px; top: -30px; font-size: 29.7265px;">🌹</div><div class="blossom" style="left: 1109.34px; top: -30px; font-size: 26.5514px;">🌹</div><div class="blossom" style="left: 1181.69px; top: -30px; font-size: 28.9689px;">🌸</div><div class="blossom" style="left: 396.371px; top: -30px; font-size: 18.7925px;">🌸</div><div class="blossom" style="left: 340.242px; top: -30px; font-size: 27.8955px;">💖</div><div class="blossom" style="left: 485.166px; top: -30px; font-size: 22.026px;">💖</div><div class="blossom" style="left: 531.052px; top: -30px; font-size: 21.8577px;">💖</div><div class="blossom" style="left: 646.004px; top: -30px; font-size: 22.8541px;">🌹</div><div class="blossom" style="left: 875.033px; top: -30px; font-size: 25.1946px;">🌹</div><div class="blossom" style="left: 212.831px; top: -30px; font-size: 17.024px;">🌹</div><div class="blossom" style="left: 108.745px; top: -30px; font-size: 19.2099px;">🌹</div><div class="blossom" style="left: 951.607px; top: -30px; font-size: 26.7637px;">🌹</div><div class="blossom" style="left: 542.021px; top: -30px; font-size: 26.7617px;">🌹</div><div class="blossom" style="left: 803.835px; top: -30px; font-size: 22.0555px;">🌹</div><div class="blossom" style="left: 591.106px; top: -30px; font-size: 21.9823px;">🌹</div><div class="blossom" style="left: 1334.94px; top: -30px; font-size: 29.1744px;">🌹</div><div class="blossom" style="left: 800.146px; top: -30px; font-size: 23.2812px;">💖</div><div class="blossom" style="left: 545.694px; top: -30px; font-size: 26.8019px;">💖</div><div class="blossom" style="left: 507.635px; top: -30px; font-size: 26.5443px;">💖</div><div class="blossom" style="left: 119.614px; top: -30px; font-size: 29.9461px;">🌸</div><div class="blossom" style="left: 1222.22px; top: -30px; font-size: 19.9746px;">🌹</div><div class="blossom" style="left: 440.268px; top: -30px; font-size: 20.1871px;">🌹</div><div class="blossom" style="left: 512.405px; top: -30px; font-size: 16.552px;">🌸</div><div class="blossom" style="left: 457.535px; top: -30px; font-size: 17.7555px;">🌹</div><div class="blossom" style="left: 612.066px; top: -30px; font-size: 20.6009px;">🌸</div><div class="blossom" style="left: 882.356px; top: -30px; font-size: 18.8944px;">🌸</div><div class="blossom" style="left: 515.134px; top: -30px; font-size: 26.0495px;">🌸</div><div class="blossom" style="left: 285.926px; top: -30px; font-size: 16.6766px;">🌹</div><div class="blossom" style="left: 919.964px; top: -30px; font-size: 17.0717px;">🌸</div><div class="blossom" style="left: 561.406px; top: -30px; font-size: 30.8995px;">💖</div><div class="blossom" style="left: 889.891px; top: -30px; font-size: 28.9288px;">💖</div><div class="blossom" style="left: 601.647px; top: -30px; font-size: 30.7499px;">💖</div><div class="blossom" style="left: 877.147px; top: -30px; font-size: 20.4043px;">🌸</div><div class="blossom" style="left: 1021.73px; top: -30px; font-size: 25.6905px;">🌸</div><div class="blossom" style="left: 206.486px; top: -30px; font-size: 25.4062px;">🌸</div><div class="blossom" style="left: 112.685px; top: -30px; font-size: 17.3295px;">🌹</div><div class="blossom" style="left: 531.774px; top: -30px; font-size: 27.2072px;">🌹</div><div class="blossom" style="left: 1252.71px; top: -30px; font-size: 17.6308px;">🌸</div><div class="blossom" style="left: 476.489px; top: -30px; font-size: 27.6534px;">🌸</div><div class="blossom" style="left: 41.5629px; top: -30px; font-size: 16.4579px;">🌸</div><div class="blossom" style="left: 169.329px; top: -30px; font-size: 20.4312px;">🌸</div><div class="blossom" style="left: 558.994px; top: -30px; font-size: 26.4112px;">🌸</div><div class="blossom" style="left: 652.432px; top: -30px; font-size: 31.8432px;">💖</div><div class="blossom" style="left: 971.791px; top: -30px; font-size: 27.8251px;">💖</div><div class="blossom" style="left: 610.733px; top: -30px; font-size: 29.858px;">💖</div><div class="blossom" style="left: 248.242px; top: -30px; font-size: 20.0254px;">🌹</div><div class="blossom" style="left: 1066.49px; top: -30px; font-size: 17.5579px;">🌸</div><div class="blossom" style="left: 399.852px; top: -30px; font-size: 23.772px;">🌹</div><div class="blossom" style="left: 182.613px; top: -30px; font-size: 27.778px;">🌹</div><div class="blossom" style="left: 1076.03px; top: -30px; font-size: 26.2794px;">🌹</div><div class="blossom" style="left: 1091.35px; top: -30px; font-size: 26.1793px;">🌹</div><div class="blossom" style="left: 50.6132px; top: -30px; font-size: 24.4474px;">🌸</div><div class="blossom" style="left: 1276.12px; top: -30px; font-size: 20.8643px;">🌸</div><div class="blossom" style="left: 165.133px; top: -30px; font-size: 16.4294px;">🌹</div><div class="blossom" style="left: 960.591px; top: -30px; font-size: 25.8331px;">🌸</div><div class="blossom" style="left: 129.759px; top: -30px; font-size: 32.0314px;">💖</div><div class="blossom" style="left: 405.527px; top: -30px; font-size: 31.0448px;">💖</div><div class="blossom" style="left: 618.701px; top: -30px; font-size: 22.6353px;">💖</div><div class="blossom" style="left: 1004.48px; top: -30px; font-size: 27.1068px;">🌹</div><div class="blossom" style="left: 1230.99px; top: -30px; font-size: 29.2743px;">🌸</div><div class="blossom" style="left: 362.603px; top: -30px; font-size: 17.9248px;">🌸</div><div class="blossom" style="left: 97.4383px; top: -30px; font-size: 23.6992px;">🌸</div><div class="blossom" style="left: 1031.51px; top: -30px; font-size: 16.0648px;">🌹</div><div class="blossom" style="left: 657.54px; top: -30px; font-size: 19.4699px;">🌸</div><div class="blossom" style="left: 338.022px; top: -30px; font-size: 28.8149px;">🌸</div><div class="blossom" style="left: 81.9017px; top: -30px; font-size: 23.451px;">🌸</div><div class="blossom" style="left: 82.7938px; top: -30px; font-size: 20.4872px;">🌸</div><div class="blossom" style="left: 779.99px; top: -30px; font-size: 23.9357px;">🌸</div><div class="blossom" style="left: 437.866px; top: -30px; font-size: 31.809px;">💖</div><div class="blossom" style="left: 610.679px; top: -30px; font-size: 24.438px;">💖</div><div class="blossom" style="left: 726.548px; top: -30px; font-size: 30.3807px;">💖</div><div class="blossom" style="left: 291.61px; top: -30px; font-size: 25.5364px;">🌹</div><div class="blossom" style="left: 17.8033px; top: -30px; font-size: 18.8336px;">🌹</div><div class="blossom" style="left: 143.749px; top: -30px; font-size: 17.0288px;">🌸</div><div class="blossom" style="left: 16.7841px; top: -30px; font-size: 25.8105px;">🌸</div><div class="blossom" style="left: 140.619px; top: -30px; font-size: 23.5005px;">🌹</div><div class="blossom" style="left: 604.956px; top: -30px; font-size: 16.5569px;">🌹</div><div class="blossom" style="left: 117.924px; top: -30px; font-size: 21.0075px;">🌹</div><div class="blossom" style="left: 295.173px; top: -30px; font-size: 23.3596px;">🌸</div><div class="blossom" style="left: 833.56px; top: -30px; font-size: 22.6127px;">🌸</div><div class="blossom" style="left: 518.065px; top: -30px; font-size: 22.2056px;">🌸</div><div class="blossom" style="left: 716.038px; top: -30px; font-size: 29.4106px;">💖</div><div class="blossom" style="left: 455.421px; top: -30px; font-size: 29.9591px;">💖</div><div class="blossom" style="left: 426.677px; top: -30px; font-size: 26.948px;">💖</div><div class="blossom" style="left: 499.591px; top: -30px; font-size: 21.9283px;">🌹</div><div class="blossom" style="left: 252.91px; top: -30px; font-size: 26.9098px;">🌹</div><div class="blossom" style="left: 372.972px; top: -30px; font-size: 18.9783px;">🌹</div><div class="blossom" style="left: 491.531px; top: -30px; font-size: 27.2984px;">🌸</div><div class="blossom" style="left: 822.22px; top: -30px; font-size: 24.9194px;">🌹</div><div class="blossom" style="left: 708.705px; top: -30px; font-size: 21.8271px;">🌸</div><div class="blossom" style="left: 322.493px; top: -30px; font-size: 27.1931px;">🌸</div><div class="blossom" style="left: 664.307px; top: -30px; font-size: 26.1236px;">🌸</div><div class="blossom" style="left: 861.264px; top: -30px; font-size: 29.0804px;">🌸</div><div class="blossom" style="left: 607.565px; top: -30px; font-size: 23.9985px;">🌹</div><div class="blossom" style="left: 682.885px; top: -30px; font-size: 25.8824px;">💖</div><div class="blossom" style="left: 672.193px; top: -30px; font-size: 21.0885px;">💖</div><div class="blossom" style="left: 872.055px; top: -30px; font-size: 21.407px;">💖</div><div class="blossom" style="left: 651.384px; top: -30px; font-size: 18.6106px;">🌹</div><div class="blossom" style="left: 389.602px; top: -30px; font-size: 20.5744px;">🌹</div><div class="blossom" style="left: 418.666px; top: -30px; font-size: 28.1962px;">🌸</div><div class="blossom" style="left: 564.031px; top: -30px; font-size: 23.8746px;">🌹</div><div class="blossom" style="left: 20.9807px; top: -30px; font-size: 24.0899px;">🌸</div><div class="blossom" style="left: 566.173px; top: -30px; font-size: 28.9906px;">🌹</div><div class="blossom" style="left: 338.376px; top: -30px; font-size: 28.5314px;">🌹</div><div class="blossom" style="left: 619.227px; top: -30px; font-size: 23.0582px;">🌸</div><div class="blossom" style="left: 143.546px; top: -30px; font-size: 16.2698px;">🌹</div><div class="blossom" style="left: 756.88px; top: -30px; font-size: 19.0207px;">🌸</div><div class="blossom" style="left: 759.394px; top: -30px; font-size: 21.9522px;">💖</div><div class="blossom" style="left: 787.428px; top: -30px; font-size: 23.7913px;">💖</div><div class="blossom" style="left: 724.274px; top: -30px; font-size: 23.3439px;">💖</div><div class="blossom" style="left: 669.869px; top: -30px; font-size: 18.5536px;">🌹</div><div class="blossom" style="left: 897.009px; top: -30px; font-size: 21.3888px;">🌸</div><div class="blossom" style="left: 205.45px; top: -30px; font-size: 21.2413px;">🌹</div><div class="blossom" style="left: 89.2058px; top: -30px; font-size: 18.302px;">🌹</div><div class="blossom" style="left: 391.681px; top: -30px; font-size: 21.2149px;">🌸</div><div class="blossom" style="left: 70.5947px; top: -30px; font-size: 24.1924px;">🌹</div><div class="blossom" style="left: 80.9556px; top: -30px; font-size: 27.525px;">🌹</div><div class="blossom" style="left: 767.624px; top: -30px; font-size: 17.0239px;">🌸</div><div class="blossom" style="left: 900.151px; top: -30px; font-size: 24.4747px;">🌹</div><div class="blossom" style="left: 487.236px; top: -30px; font-size: 29.1661px;">🌸</div><div class="blossom" style="left: 408.988px; top: -30px; font-size: 26.6314px;">💖</div><div class="blossom" style="left: 282.338px; top: -30px; font-size: 25.8357px;">💖</div><div class="blossom" style="left: 167.969px; top: -30px; font-size: 25.4571px;">💖</div><div class="blossom" style="left: 194.145px; top: -30px; font-size: 22.6137px;">🌹</div><div class="blossom" style="left: 508.812px; top: -30px; font-size: 27.0181px;">🌹</div><div class="blossom" style="left: 456.496px; top: -30px; font-size: 29.512px;">🌹</div><div class="blossom" style="left: 186.066px; top: -30px; font-size: 24.2603px;">🌸</div><div class="blossom" style="left: 653.523px; top: -30px; font-size: 25.9987px;">🌸</div><div class="blossom" style="left: 647.263px; top: -30px; font-size: 23.4168px;">🌹</div><div class="blossom" style="left: 902.205px; top: -30px; font-size: 25.8381px;">🌹</div><div class="blossom" style="left: 252.517px; top: -30px; font-size: 29.7531px;">🌸</div><div class="blossom" style="left: 624.199px; top: -30px; font-size: 24.4489px;">🌹</div><div class="blossom" style="left: 105.79px; top: -30px; font-size: 28.7415px;">🌸</div><div class="blossom" style="left: 134.677px; top: -30px; font-size: 27.8353px;">💖</div><div class="blossom" style="left: 847.779px; top: -30px; font-size: 21.4378px;">💖</div><div class="blossom" style="left: 587.201px; top: -30px; font-size: 29.6568px;">💖</div></body></html>
+  
+      function makeHeart(){
+        const el=document.createElement('div');
+        el.className='blossom';
+        const size=rand(20,34);
+        el.style.left=rand(0,window.innerWidth)+'px';
+        el.style.top='-30px';
+        el.textContent='💖';
+        el.style.fontSize=size+'px';
+        document.body.appendChild(el);
+        const duration=rand(8000,11000);
+        const ty=window.innerHeight+50;
+        const tx=rand(-80,80);
+        const rotate=rand(-540,540);
+        el.animate([
+          {transform:`translate(0,0) rotate(0deg)`,opacity:1},
+          {transform:`translate(${tx}px,${ty}px) rotate(${rotate}deg)`,opacity:0}
+        ],{duration:duration,easing:'ease-in-out'});
+        setTimeout(()=>el.remove(),duration);
+      }
+  
+      setInterval(()=>{for(let i=0;i<5;i++) makeBlossom();},400);
+      setInterval(()=>{for(let i=0;i<3;i++) makeHeart();},800);
+  
+      document.addEventListener('click', e => {
+        for(let i=0;i<10;i++){
+          const el=document.createElement('div');
+          el.className='blossom';
+          el.textContent=Math.random()>0.5?'🌹':'🌸';
+          el.style.left=e.clientX+'px';
+          el.style.top=e.clientY+'px';
+          el.style.fontSize=rand(14,28)+'px';
+          document.body.appendChild(el);
+          const duration=rand(2000,4000);
+          const tx=rand(-150,150);const ty=rand(200,400);const rotate=rand(-360,360);
+          el.animate([
+            {transform:`translate(0,0) rotate(0deg)`,opacity:1},
+            {transform:`translate(${tx}px,${ty}px) rotate(${rotate}deg)`,opacity:0}
+          ],{duration:duration,easing:'ease-out'});
+          setTimeout(()=>el.remove(),duration);
+        }
+        for(let i=0;i<6;i++){
+          const el=document.createElement('div');
+          el.className='blossom';
+          el.textContent='💖';
+          el.style.left=e.clientX+'px';
+          el.style.top=e.clientY+'px';
+          el.style.fontSize=rand(18,32)+'px';
+          document.body.appendChild(el);
+          const duration=rand(2500,4000);
+          const tx=rand(-100,100);const ty=rand(250,450);const rotate=rand(-270,270);
+          el.animate([
+            {transform:`translate(0,0) scale(1) rotate(0deg)`,opacity:1},
+            {transform:`translate(${tx}px,${ty}px) scale(1.5) rotate(${rotate}deg)`,opacity:0}
+          ],{duration:duration,easing:'ease-in-out'});
+          setTimeout(()=>el.remove(),duration);
+        }
+      });
+    </script>
+  
+  
+  <div class="blossom" style="left: 1285.55px; top: -30px; font-size: 22.4655px;">🌹</div><div class="blossom" style="left: 193.992px; top: -30px; font-size: 24.0431px;">🌹</div><div class="blossom" style="left: 1264.15px; top: -30px; font-size: 18.5163px;">🌹</div><div class="blossom" style="left: 167.974px; top: -30px; font-size: 25.7599px;">🌸</div><div class="blossom" style="left: 215.164px; top: -30px; font-size: 22.5155px;">💖</div><div class="blossom" style="left: 1294.86px; top: -30px; font-size: 26.5091px;">💖</div><div class="blossom" style="left: 1182.22px; top: -30px; font-size: 28.8898px;">🌹</div><div class="blossom" style="left: 375.32px; top: -30px; font-size: 21.0276px;">🌸</div><div class="blossom" style="left: 588.71px; top: -30px; font-size: 25.1054px;">🌹</div><div class="blossom" style="left: 1122.84px; top: -30px; font-size: 19.3398px;">🌸</div><div class="blossom" style="left: 262.657px; top: -30px; font-size: 29.7265px;">🌹</div><div class="blossom" style="left: 1109.34px; top: -30px; font-size: 26.5514px;">🌹</div><div class="blossom" style="left: 1181.69px; top: -30px; font-size: 28.9689px;">🌸</div><div class="blossom" style="left: 396.371px; top: -30px; font-size: 18.7925px;">🌸</div><div class="blossom" style="left: 340.242px; top: -30px; font-size: 27.8955px;">💖</div><div class="blossom" style="left: 485.166px; top: -30px; font-size: 22.026px;">💖</div><div class="blossom" style="left: 531.052px; top: -30px; font-size: 21.8577px;">💖</div><div class="blossom" style="left: 646.004px; top: -30px; font-size: 22.8541px;">🌹</div><div class="blossom" style="left: 875.033px; top: -30px; font-size: 25.1946px;">🌹</div><div class="blossom" style="left: 212.831px; top: -30px; font-size: 17.024px;">🌹</div><div class="blossom" style="left: 108.745px; top: -30px; font-size: 19.2099px;">🌹</div><div class="blossom" style="left: 951.607px; top: -30px; font-size: 26.7637px;">🌹</div><div class="blossom" style="left: 542.021px; top: -30px; font-size: 26.7617px;">🌹</div><div class="blossom" style="left: 803.835px; top: -30px; font-size: 22.0555px;">🌹</div><div class="blossom" style="left: 591.106px; top: -30px; font-size: 21.9823px;">🌹</div><div class="blossom" style="left: 1334.94px; top: -30px; font-size: 29.1744px;">🌹</div><div class="blossom" style="left: 800.146px; top: -30px; font-size: 23.2812px;">💖</div><div class="blossom" style="left: 545.694px; top: -30px; font-size: 26.8019px;">💖</div><div class="blossom" style="left: 507.635px; top: -30px; font-size: 26.5443px;">💖</div><div class="blossom" style="left: 119.614px; top: -30px; font-size: 29.9461px;">🌸</div><div class="blossom" style="left: 1222.22px; top: -30px; font-size: 19.9746px;">🌹</div><div class="blossom" style="left: 440.268px; top: -30px; font-size: 20.1871px;">🌹</div><div class="blossom" style="left: 512.405px; top: -30px; font-size: 16.552px;">🌸</div><div class="blossom" style="left: 457.535px; top: -30px; font-size: 17.7555px;">🌹</div><div class="blossom" style="left: 612.066px; top: -30px; font-size: 20.6009px;">🌸</div><div class="blossom" style="left: 882.356px; top: -30px; font-size: 18.8944px;">🌸</div><div class="blossom" style="left: 515.134px; top: -30px; font-size: 26.0495px;">🌸</div><div class="blossom" style="left: 285.926px; top: -30px; font-size: 16.6766px;">🌹</div><div class="blossom" style="left: 919.964px; top: -30px; font-size: 17.0717px;">🌸</div><div class="blossom" style="left: 561.406px; top: -30px; font-size: 30.8995px;">💖</div><div class="blossom" style="left: 889.891px; top: -30px; font-size: 28.9288px;">💖</div><div class="blossom" style="left: 601.647px; top: -30px; font-size: 30.7499px;">💖</div><div class="blossom" style="left: 877.147px; top: -30px; font-size: 20.4043px;">🌸</div><div class="blossom" style="left: 1021.73px; top: -30px; font-size: 25.6905px;">🌸</div><div class="blossom" style="left: 206.486px; top: -30px; font-size: 25.4062px;">🌸</div><div class="blossom" style="left: 112.685px; top: -30px; font-size: 17.3295px;">🌹</div><div class="blossom" style="left: 531.774px; top: -30px; font-size: 27.2072px;">🌹</div><div class="blossom" style="left: 1252.71px; top: -30px; font-size: 17.6308px;">🌸</div><div class="blossom" style="left: 476.489px; top: -30px; font-size: 27.6534px;">🌸</div><div class="blossom" style="left: 41.5629px; top: -30px; font-size: 16.4579px;">🌸</div><div class="blossom" style="left: 169.329px; top: -30px; font-size: 20.4312px;">🌸</div><div class="blossom" style="left: 558.994px; top: -30px; font-size: 26.4112px;">🌸</div><div class="blossom" style="left: 652.432px; top: -30px; font-size: 31.8432px;">💖</div><div class="blossom" style="left: 971.791px; top: -30px; font-size: 27.8251px;">💖</div><div class="blossom" style="left: 610.733px; top: -30px; font-size: 29.858px;">💖</div><div class="blossom" style="left: 248.242px; top: -30px; font-size: 20.0254px;">🌹</div><div class="blossom" style="left: 1066.49px; top: -30px; font-size: 17.5579px;">🌸</div><div class="blossom" style="left: 399.852px; top: -30px; font-size: 23.772px;">🌹</div><div class="blossom" style="left: 182.613px; top: -30px; font-size: 27.778px;">🌹</div><div class="blossom" style="left: 1076.03px; top: -30px; font-size: 26.2794px;">🌹</div><div class="blossom" style="left: 1091.35px; top: -30px; font-size: 26.1793px;">🌹</div><div class="blossom" style="left: 50.6132px; top: -30px; font-size: 24.4474px;">🌸</div><div class="blossom" style="left: 1276.12px; top: -30px; font-size: 20.8643px;">🌸</div><div class="blossom" style="left: 165.133px; top: -30px; font-size: 16.4294px;">🌹</div><div class="blossom" style="left: 960.591px; top: -30px; font-size: 25.8331px;">🌸</div><div class="blossom" style="left: 129.759px; top: -30px; font-size: 32.0314px;">💖</div><div class="blossom" style="left: 405.527px; top: -30px; font-size: 31.0448px;">💖</div><div class="blossom" style="left: 618.701px; top: -30px; font-size: 22.6353px;">💖</div><div class="blossom" style="left: 1004.48px; top: -30px; font-size: 27.1068px;">🌹</div><div class="blossom" style="left: 1230.99px; top: -30px; font-size: 29.2743px;">🌸</div><div class="blossom" style="left: 362.603px; top: -30px; font-size: 17.9248px;">🌸</div><div class="blossom" style="left: 97.4383px; top: -30px; font-size: 23.6992px;">🌸</div><div class="blossom" style="left: 1031.51px; top: -30px; font-size: 16.0648px;">🌹</div><div class="blossom" style="left: 657.54px; top: -30px; font-size: 19.4699px;">🌸</div><div class="blossom" style="left: 338.022px; top: -30px; font-size: 28.8149px;">🌸</div><div class="blossom" style="left: 81.9017px; top: -30px; font-size: 23.451px;">🌸</div><div class="blossom" style="left: 82.7938px; top: -30px; font-size: 20.4872px;">🌸</div><div class="blossom" style="left: 779.99px; top: -30px; font-size: 23.9357px;">🌸</div><div class="blossom" style="left: 437.866px; top: -30px; font-size: 31.809px;">💖</div><div class="blossom" style="left: 610.679px; top: -30px; font-size: 24.438px;">💖</div><div class="blossom" style="left: 726.548px; top: -30px; font-size: 30.3807px;">💖</div><div class="blossom" style="left: 291.61px; top: -30px; font-size: 25.5364px;">🌹</div><div class="blossom" style="left: 17.8033px; top: -30px; font-size: 18.8336px;">🌹</div><div class="blossom" style="left: 143.749px; top: -30px; font-size: 17.0288px;">🌸</div><div class="blossom" style="left: 16.7841px; top: -30px; font-size: 25.8105px;">🌸</div><div class="blossom" style="left: 140.619px; top: -30px; font-size: 23.5005px;">🌹</div><div class="blossom" style="left: 604.956px; top: -30px; font-size: 16.5569px;">🌹</div><div class="blossom" style="left: 117.924px; top: -30px; font-size: 21.0075px;">🌹</div><div class="blossom" style="left: 295.173px; top: -30px; font-size: 23.3596px;">🌸</div><div class="blossom" style="left: 833.56px; top: -30px; font-size: 22.6127px;">🌸</div><div class="blossom" style="left: 518.065px; top: -30px; font-size: 22.2056px;">🌸</div><div class="blossom" style="left: 716.038px; top: -30px; font-size: 29.4106px;">💖</div><div class="blossom" style="left: 455.421px; top: -30px; font-size: 29.9591px;">💖</div><div class="blossom" style="left: 426.677px; top: -30px; font-size: 26.948px;">💖</div><div class="blossom" style="left: 499.591px; top: -30px; font-size: 21.9283px;">🌹</div><div class="blossom" style="left: 252.91px; top: -30px; font-size: 26.9098px;">🌹</div><div class="blossom" style="left: 372.972px; top: -30px; font-size: 18.9783px;">🌹</div><div class="blossom" style="left: 491.531px; top: -30px; font-size: 27.2984px;">🌸</div><div class="blossom" style="left: 822.22px; top: -30px; font-size: 24.9194px;">🌹</div><div class="blossom" style="left: 708.705px; top: -30px; font-size: 21.8271px;">🌸</div><div class="blossom" style="left: 322.493px; top: -30px; font-size: 27.1931px;">🌸</div><div class="blossom" style="left: 664.307px; top: -30px; font-size: 26.1236px;">🌸</div><div class="blossom" style="left: 861.264px; top: -30px; font-size: 29.0804px;">🌸</div><div class="blossom" style="left: 607.565px; top: -30px; font-size: 23.9985px;">🌹</div><div class="blossom" style="left: 682.885px; top: -30px; font-size: 25.8824px;">💖</div><div class="blossom" style="left: 672.193px; top: -30px; font-size: 21.0885px;">💖</div><div class="blossom" style="left: 872.055px; top: -30px; font-size: 21.407px;">💖</div><div class="blossom" style="left: 651.384px; top: -30px; font-size: 18.6106px;">🌹</div><div class="blossom" style="left: 389.602px; top: -30px; font-size: 20.5744px;">🌹</div><div class="blossom" style="left: 418.666px; top: -30px; font-size: 28.1962px;">🌸</div><div class="blossom" style="left: 564.031px; top: -30px; font-size: 23.8746px;">🌹</div><div class="blossom" style="left: 20.9807px; top: -30px; font-size: 24.0899px;">🌸</div><div class="blossom" style="left: 566.173px; top: -30px; font-size: 28.9906px;">🌹</div><div class="blossom" style="left: 338.376px; top: -30px; font-size: 28.5314px;">🌹</div><div class="blossom" style="left: 619.227px; top: -30px; font-size: 23.0582px;">🌸</div><div class="blossom" style="left: 143.546px; top: -30px; font-size: 16.2698px;">🌹</div><div class="blossom" style="left: 756.88px; top: -30px; font-size: 19.0207px;">🌸</div><div class="blossom" style="left: 759.394px; top: -30px; font-size: 21.9522px;">💖</div><div class="blossom" style="left: 787.428px; top: -30px; font-size: 23.7913px;">💖</div><div class="blossom" style="left: 724.274px; top: -30px; font-size: 23.3439px;">💖</div><div class="blossom" style="left: 669.869px; top: -30px; font-size: 18.5536px;">🌹</div><div class="blossom" style="left: 897.009px; top: -30px; font-size: 21.3888px;">🌸</div><div class="blossom" style="left: 205.45px; top: -30px; font-size: 21.2413px;">🌹</div><div class="blossom" style="left: 89.2058px; top: -30px; font-size: 18.302px;">🌹</div><div class="blossom" style="left: 391.681px; top: -30px; font-size: 21.2149px;">🌸</div><div class="blossom" style="left: 70.5947px; top: -30px; font-size: 24.1924px;">🌹</div><div class="blossom" style="left: 80.9556px; top: -30px; font-size: 27.525px;">🌹</div><div class="blossom" style="left: 767.624px; top: -30px; font-size: 17.0239px;">🌸</div><div class="blossom" style="left: 900.151px; top: -30px; font-size: 24.4747px;">🌹</div><div class="blossom" style="left: 487.236px; top: -30px; font-size: 29.1661px;">🌸</div><div class="blossom" style="left: 408.988px; top: -30px; font-size: 26.6314px;">💖</div><div class="blossom" style="left: 282.338px; top: -30px; font-size: 25.8357px;">💖</div><div class="blossom" style="left: 167.969px; top: -30px; font-size: 25.4571px;">💖</div><div class="blossom" style="left: 194.145px; top: -30px; font-size: 22.6137px;">🌹</div><div class="blossom" style="left: 508.812px; top: -30px; font-size: 27.0181px;">🌹</div><div class="blossom" style="left: 456.496px; top: -30px; font-size: 29.512px;">🌹</div><div class="blossom" style="left: 186.066px; top: -30px; font-size: 24.2603px;">🌸</div><div class="blossom" style="left: 653.523px; top: -30px; font-size: 25.9987px;">🌸</div><div class="blossom" style="left: 647.263px; top: -30px; font-size: 23.4168px;">🌹</div><div class="blossom" style="left: 902.205px; top: -30px; font-size: 25.8381px;">🌹</div><div class="blossom" style="left: 252.517px; top: -30px; font-size: 29.7531px;">🌸</div><div class="blossom" style="left: 624.199px; top: -30px; font-size: 24.4489px;">🌹</div><div class="blossom" style="left: 105.79px; top: -30px; font-size: 28.7415px;">🌸</div><div class="blossom" style="left: 134.677px; top: -30px; font-size: 27.8353px;">💖</div><div class="blossom" style="left: 847.779px; top: -30px; font-size: 21.4378px;">💖</div><div class="blossom" style="left: 587.201px; top: -30px; font-size: 29.6568px;">💖</div></body></html>
