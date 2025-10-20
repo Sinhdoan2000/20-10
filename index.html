@@ -61,24 +61,8 @@
       <p>Anh thương em nhiều lắm ❤️</p>
     </div>
   </div>
- <audio id="bgAudio" preload="auto" loop hidden>
-  <source src="https://drive.google.com/uc?export=download&id=1JcblXkiUFBfdXc8Q9IPfDQpEvMW85eZY" type="audio/mpeg">
-</audio>
 
-<script>
-  const audio = document.getElementById('bgAudio');
-  window.addEventListener('load', () => {
-    const playPromise = audio.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        document.body.addEventListener('click', () => {
-          audio.play();
-        }, { once: true });
-      });
-    }
-  });
-  audio.volume = 0.6;
-</script>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/FN7ALfpGxiI?si=pwwfhuCesnBwADn0&amp;start=22" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
   <script>
     function rand(min,max){return Math.random()*(max-min)+min}
