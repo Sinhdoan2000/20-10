@@ -61,9 +61,24 @@
       <p>Anh thương em nhiều lắm ❤️</p>
     </div>
   </div>
- <audio autoplay loop hidden>
-  <source src="https://cdn.pixabay.com/download/audio/2022/10/11/audio_847b927b52.mp3?filename=romantic-background-music-ambient-118409.mp3" type="audio/mpeg">
+ <audio id="bgAudio" preload="auto" loop hidden>
+  <source src="https://drive.google.com/uc?export=download&id=1JcblXkiUFBfdXc8Q9IPfDQpEvMW85eZY" type="audio/mpeg">
 </audio>
+
+<script>
+  const audio = document.getElementById('bgAudio');
+  window.addEventListener('load', () => {
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        document.body.addEventListener('click', () => {
+          audio.play();
+        }, { once: true });
+      });
+    }
+  });
+  audio.volume = 0.6;
+</script>
 
   <script>
     function rand(min,max){return Math.random()*(max-min)+min}
